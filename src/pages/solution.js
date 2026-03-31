@@ -1,5 +1,7 @@
 import { html, render } from "lit-html";
 import { loadData } from "../dataLoader.js";
+import { renderHeader } from "../components/header.js";
+import { renderFooter } from "../components/footer.js";
 
 /**
  * STATE (Глобальний стан)
@@ -152,8 +154,8 @@ const productCard = (id, name, price, imgPath, code, oldPrice, rating, ratingCou
  */
 export const renderSolutionPage = (data) => {
     if (!data) return html`Loading...`;
-
-    return html`
+  return html`
+    ${renderHeader()}
         <div class="l-solution">
             ${secretOfferModal()}
 
@@ -252,6 +254,7 @@ export const renderSolutionPage = (data) => {
                 </div>
             </div>
         </div>
+        ${renderFooter()}
     `;
 };
 
