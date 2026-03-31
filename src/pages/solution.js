@@ -224,7 +224,7 @@ export const renderSolutionPage = (data) => {
                                     <li>Zametače a metly</li><li>Vedrá a mop systémy</li><li>Čističky vzduchu</li>
                                     <li>Vysávače a príslušenstvo</li><li>Čističe na okná</li><li>Čistiace kefy a hubky</li>
                                 </ul>
-                                <a href="#" class="c-category-box__link">Všetky kategórie →</a>
+                                <a href="#" class="c-category-box__link">Všetky kategóriе →</a>
                             </div>
                         </div>
 
