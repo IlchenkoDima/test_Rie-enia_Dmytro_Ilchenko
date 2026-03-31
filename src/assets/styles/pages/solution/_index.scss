@@ -2,6 +2,10 @@
 
 @use "./solution_banner";
 @use "./solution_content";
+@use "./solution_cta";
+@use "./solution_product_card";
+@use "./solution_categories";
+@use "./modal";
 
 .l-solution {
     &__banner {

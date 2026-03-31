@@ -1,1 +1,18 @@
 @use "./../init" as *;
+
+
+@font-face {
+  font-family: 'Wix Madefor Display';
+  src: url('../../assets/fonts/WixMadeforDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../../assets/fonts/DMSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

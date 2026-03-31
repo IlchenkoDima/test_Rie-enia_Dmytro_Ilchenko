@@ -1,0 +1,213 @@
+@use "./../../init" as *;
+
+.l-solution__categories {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    @include tablet {
+        padding-top: 4.8rem;
+        padding-bottom: 4.8rem;
+    }
+}
+
+.l-solution__categories-inner {
+    max-width: 132rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    box-sizing: border-box;
+
+    .c-section-title {
+        font-size: 3.6rem;
+        font-weight: 800;
+        margin-bottom: 4rem;
+        color: #070216;
+        padding: 0;
+
+        @include mobile {
+            font-size: 2.8rem;
+            margin-bottom: 2.4rem;
+        }
+
+        @include iphone {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.c-solution-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 43.5rem 43.5rem; 
+    gap: 2.4rem;
+    width: 100%;
+    
+    grid-template-areas:
+        "power  garden garden acc"
+        "clean  clean  hand   acc";
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: none;
+        gap: 2rem;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+        
+    &__item {
+        position: relative;
+        border-radius: 0.8rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 4rem;
+        text-decoration: none;
+        background-size: cover !important; 
+        background-position: center top !important; 
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease;
+
+        @include tablet {
+            grid-area: auto !important;
+            height: 40rem;
+        }
+
+        @include iphone {
+            padding: 3.2rem 2rem;
+            height: 35rem;
+        }
+
+        &:hover {
+            transform: translateY(-0.5rem);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.85) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        &--1 { grid-area: power; }
+        &--2 { grid-area: garden; }
+        &--4 { grid-area: clean; }
+        &--5 { grid-area: hand; }
+
+        &--3 {
+            grid-area: acc;
+            background-color: #000; 
+            background-repeat: no-repeat;
+            background-position: center top !important;
+            background-size: contain !important; 
+            z-index: 2;
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image: url("./src/assets/images/accesories.png");
+                background-size: cover;
+                background-position: center;
+                z-index: -1;
+            }
+
+            @include tablet {
+                height: 45rem;
+                background-image: none;
+            }
+            @include iphone {
+                background-image: none;
+            }
+        }
+    }
+}
+
+.c-category-box {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    width: 100%;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 2.4rem;
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.1;
+
+            @include iphone {
+                font-size: 2.2rem;
+            }
+        }
+
+        .c-badge-count {
+            background-color: #dd1969;
+            color: #fff;
+            padding: 0.3rem 0.9rem;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 3.2rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem 2.4rem;
+
+        @include iphone {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        li {
+            font-size: 1.6rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 1.2rem;
+                height: 0.3rem;
+                background-color: #dd1969;
+                margin-right: 1.2rem;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &__link {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: underline;
+        font-size: 1.6rem;
+        &:hover { opacity: 0.8; }
+    }
+}
+
+.c-solution-categories__item {
+    &--1, &--5, &--3 {
+        .c-category-box__list {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+}

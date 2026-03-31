@@ -2,8 +2,8 @@
 
 .c-solution-cta {
     position: relative;
-    width: 64rem;
-    height: 54rem;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     border-radius: 0.8rem;
 
@@ -13,80 +13,76 @@
         background-color: var(--c-bg);
         background-position: center;
         background-size: cover;
-        border-radius: 0.8rem;
+        z-index: 1;
     }
 
     &__overlay {
         position: absolute;
         inset: 0;
-        background: rgb(0 0 0 / 40%);
-        border-radius: 0.8rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.7) 100%);
+        z-index: 2;
     }
 
     &__content {
         position: relative;
+        z-index: 3;
         display: flex;
         flex-direction: column;
-        gap: 2.4rem;
-        align-items: flex-start;
         justify-content: flex-end;
         height: 100%;
         padding: 4.8rem;
         color: #fff;
 
+        @include iphone {
+            padding: 3.2rem 2rem;
+        }
+
         &__title {
-            margin: 0;
+            margin: 0 0 2rem 0;
             font-family: "Wix Madefor Display", sans-serif;
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
+
+            @include iphone {
+                font-size: 2.4rem;
+            }
         }
 
         &__description {
-            margin: 0;
+            margin: 0 0 3.2rem 0;
             font-family: "DM Sans", sans-serif;
-            font-size: 1.6rem;
-            font-weight: 400;
+            font-size: 1.8rem;
+            font-weight: 600;
             line-height: 1.6;
+            max-width: 42rem;
 
-            strong {
-                font-weight: 800;
+            @include iphone {
+                font-size: 1.5rem;
             }
         }
 
         &__button {
+            width: fit-content;
             display: flex;
-            gap: 0.8rem;
+            gap: 1.2rem;
             align-items: center;
-            justify-content: space-between;
-            padding: 1.6rem 2rem;
+            padding: 1.6rem 2.4rem;
             color: #fff;
-            cursor: pointer;
             background: #dd1969;
             border: none;
             border-radius: 0.4rem;
-            transition: background 0.2s ease;
+            cursor: pointer;
+            font-size: 1.8rem;
+            font-weight: 700;
 
-            &:hover {
-                background: #c01559;
+
+            @include iphone {
+                width: 100%;
+                justify-content: center;
             }
 
-            &:active {
-                background: #a01249;
-            }
-
-            .sc-text {
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: 1.6rem;
-                font-weight: 700;
-                white-space: nowrap;
-            }
-
-            .sc-icon {
-                flex-shrink: 0;
-                width: 2rem;
-                height: 2rem;
-            }
+            .sc-text { font-weight: 700; font-size: 1.6rem; }
         }
     }
 }

@@ -1,0 +1,165 @@
+@use "./../../init" as *;
+
+.c-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 2rem;
+
+    &.is-open {
+        display: flex;
+    }
+
+    &__content {
+        background: #fff;
+        width: 100%;
+        max-width: 68rem;
+        border-radius: 0.8rem;
+        position: relative;
+        padding: 4.8rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    &__close {
+        position: absolute;
+        top: 2.4rem;
+        right: 2.4rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #000;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__header {
+        margin-bottom: 3.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #070216;
+        max-width: 45rem;
+        margin: 0;
+    }
+
+    &__required-label {
+        color: #dd1969;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+}
+
+.c-form {
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.4rem;
+    }
+
+    &__group {
+        margin-bottom: 2.4rem;
+    }
+
+    &__label {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        color: #070216;
+
+        .required {
+            color: #dd1969;
+            margin-left: 0.4rem;
+        }
+    }
+
+    &__input,
+    &__select {
+        width: 100%;
+        height: 5.6rem;
+        border: 1px solid #D0D5DD;
+        border-radius: 0.4rem;
+        padding: 0 1.6rem;
+        font-size: 1.6rem;
+        color: #101828;
+        background: #fff;
+        transition: border-color 0.2s;
+
+        &::placeholder {
+            color: #667085;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: #dd1969;
+            box-shadow: 0 0 0 4px rgba(221, 25, 105, 0.1);
+        }
+    }
+
+    &__select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23DD1969' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 2rem center;
+        padding-right: 4.5rem;
+        cursor: pointer;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 3.2rem;
+        margin-top: 3.2rem;
+    }
+
+    &__disclaimer {
+        font-size: 1.4rem;
+        line-height: 1.4;
+        color: #101828;
+        margin: 0;
+
+        a {
+            color: #dd1969;
+            text-decoration: underline;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// 3. КНОПКА ВІДПРАВКИ
+.c-button--submit {
+    background-color: #dd1969;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.6rem 3.2rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: #b51455;
+    }
+}
