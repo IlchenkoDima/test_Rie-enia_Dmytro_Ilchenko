@@ -1,5 +1,7 @@
 import { html, render } from "lit-html";
 import { loadData } from "../dataLoader.js";
+import { renderHeader } from "../components/header.js";
+import { renderFooter } from "../components/footer.js";
 
 let isModalOpen = false;
 let cartCount = 0;
@@ -104,8 +106,8 @@ const productCard = (id, name, price, imgPath, code, oldPrice, rating, ratingCou
             </div>
             ${showActions ? html`
                 <div class="c-product-card__actions">
-                    <button class="c-icon-button"><img src="src/assets/images/compare.png" width="32" height="32" /></button>
-                    <button class="c-icon-button"><img src="src/assets/images/heart.png" width="32" height="32" /></button>
+                    <button class="c-icon-button"><img src="./src/assets/images/compare.png" width="32" height="32" /></button>
+                    <button class="c-icon-button"><img src="./src/assets/images/heart.png" width="32" height="32" /></button>
                 </div>
             ` : ""}
         </div>
@@ -150,7 +152,7 @@ export const renderSolutionPage = (data) => {
                 <div class="l-container">
                     ${data.banner ? html`
                         <div class="c-solution-banner">
-                            <div class="c-solution-banner__image" style="background-image: url('src/assets/images/main-banner.jpg')"></div>
+                            <div class="c-solution-banner__image" style="background-image: url('./src/assets/images/main-banner.jpg')"></div>
                             <div class="c-solution-banner__content">
                                 <h1 class="c-solution-banner__content__title">${data.banner.title}</h1>
                                 <div class="c-solution-banner__content__description">${data.banner.description}</div>
@@ -166,7 +168,7 @@ export const renderSolutionPage = (data) => {
                         <div class="c-solution-content__cta">
                             ${data.ctaBanner ? html`
                                 <div class="c-solution-cta">
-                                    <div class="c-solution-cta__image" style="background-image: url('src/assets/images/mystery-offer.jpg')"></div>
+                                    <div class="c-solution-cta__image" style="background-image: url('./src/assets/images/mystery-offer.jpg')"></div>
                                     <div class="c-solution-cta__content">
                                         <h2 class="c-solution-cta__content__title">${data.ctaBanner.title}</h2>
                                         <p class="c-solution-cta__content__description">${data.ctaBanner.description}</p>
@@ -175,8 +177,8 @@ export const renderSolutionPage = (data) => {
                                 </div>` : ""}
                         </div>
                         <div class="c-solution-content__products">
-                            ${productCard("1", "Dewalt Pro 700 Max", "268,10", "src/assets/images/drill1.png", "DHP453RFE", "278", "★★★★☆", "18", "-27%", true, "255,70", true)}
-                            ${productCard("2", "Metabo 600 Heavy tools", "129,80", "src/assets/images/drill2.png", "DHP453RFE", "139", "★★★★☆", "17", "-43%", false, "108,40", false)}
+                            ${productCard("1", "Dewalt Pro 700 Max", "268,10", "./src/assets/images/drill1.png", "DHP453RFE", "278", "★★★★☆", "18", "-27%", true, "255,70", true)}
+                            ${productCard("2", "Metabo 600 Heavy tools", "129,80", "./src/assets/images/drill2.png", "DHP453RFE", "139", "★★★★☆", "17", "-43%", false, "108,40", false)}
                         </div>
                     </div>
                 </div>
@@ -186,7 +188,7 @@ export const renderSolutionPage = (data) => {
                 <div class="l-solution__categories-inner">
                     <h2 class="c-section-title">Top kategórie produktov</h2>
                     <div class="c-solution-categories">
-                        <div class="c-solution-categories__item c-solution-categories__item--1" style="background-image: url('src/assets/images/power_tools.jpg')">
+                        <div class="c-solution-categories__item c-solution-categories__item--1" style="background-image: url('./src/assets/images/power_tools.jpg')">
                             <div class="c-category-box">
                                 <div class="c-category-box__header"><h2>Elektrické náradie</h2><span class="c-badge-count">12</span></div>
                                 <ul class="c-category-box__list"><li>Elektrické vŕtačky</li><li>Elektrické skrutkovače</li><li>Elektrické vrtáky</li></ul>
@@ -194,7 +196,7 @@ export const renderSolutionPage = (data) => {
                             </div>
                         </div>
 
-                        <div class="c-solution-categories__item c-solution-categories__item--2" style="background-image: url('src/assets/images/garden_tools.jpg')">
+                        <div class="c-solution-categories__item c-solution-categories__item--2" style="background-image: url('./src/assets/images/garden_tools.jpg')">
                             <div class="c-category-box">
                                 <div class="c-category-box__header"><h2>Záhrada a Les</h2><span class="c-badge-count">45</span></div>
                                 <ul class="c-category-box__list">
@@ -205,7 +207,7 @@ export const renderSolutionPage = (data) => {
                             </div>
                         </div>
 
-                        <div class="c-solution-categories__item c-solution-categories__item--3" style="background-image: url('src/assets/images/accesories_main.png')">
+                        <div class="c-solution-categories__item c-solution-categories__item--3" style="background-image: url('./src/assets/images/accesories_main.png')">
                             <div class="c-category-box">
                                 <div class="c-category-box__header"><h2>Príslušenstvo</h2><span class="c-badge-count">35</span></div>
                                 <ul class="c-category-box__list" style="grid-template-columns: 1fr;">
@@ -215,7 +217,7 @@ export const renderSolutionPage = (data) => {
                             </div>
                         </div>
 
-                        <div class="c-solution-categories__item c-solution-categories__item--4" style="background-image: url('src/assets/images/cleaning_tools.jpg')">
+                        <div class="c-solution-categories__item c-solution-categories__item--4" style="background-image: url('./src/assets/images/cleaning_tools.jpg')">
                             <div class="c-category-box">
                                 <div class="c-category-box__header"><h2>Čistenie a upratovanie</h2><span class="c-badge-count">66</span></div>
                                 <ul class="c-category-box__list">
@@ -226,7 +228,7 @@ export const renderSolutionPage = (data) => {
                             </div>
                         </div>
 
-                        <div class="c-solution-categories__item c-solution-categories__item--5" style="background-image: url('src/assets/images/handle_tools.jpg')">
+                        <div class="c-solution-categories__item c-solution-categories__item--5" style="background-image: url('./src/assets/images/handle_tools.jpg')">
                             <div class="c-category-box">
                                 <div class="c-category-box__header"><h2>Ručné náradie</h2><span class="c-badge-count">18</span></div>
                                 <ul class="c-category-box__list"><li>Gola sady</li><li>Sady ručného náradia</li><li>Meranie a značenie</li></ul>
@@ -239,8 +241,6 @@ export const renderSolutionPage = (data) => {
         </div>
     `;
 };
-
-updateUI();
 
 export const loadAndRenderSolutionPage = async () => {
     try {
